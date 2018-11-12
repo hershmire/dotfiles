@@ -75,8 +75,7 @@ node_prompt() {
   fi
 }
 
-# export PROMPT=$' $(node_prompt)in $(directory_name) $(git_dirty)$(need_push)› '
-export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(battery_status)$(node_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
