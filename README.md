@@ -2,6 +2,12 @@
 
 This repo is a fork of [holman's dotfiles](ttps://github.com/holman/dotfiles) with some modifications specific to my own needs.
 
+Before starting, make sure you're terminal is running in ZSH:
+
+```sh
+chsh -s /bin/zsh
+```
+
 ## holman does dotfiles
 
 Your dotfiles are how you personalize your system. These are mine.

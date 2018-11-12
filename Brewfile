@@ -12,7 +12,6 @@ brew 'jp2a'
 brew 'jq'
 brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
-brew 'nvm'
 brew 'openssl'
 # brew 'node'
 brew 'readline'
@@ -25,7 +24,7 @@ brew 'spaceman-diff'
 # brew 'spark'
 brew 'unrar'
 brew 'wget'
-brew 'yarn --without-node'
+brew 'yarn', args: ['without-node']
 brew 'youtube-dl'
 
 cask '1password'
