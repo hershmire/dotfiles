@@ -16,15 +16,18 @@ fi
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
-  echo "path file: $file"
   source $file
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+# NOTE: Looping through the path files has been moved below loading everything
+# (above) in order to get custom PATH settings to take precedence over
+# /usr/local/bin 
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
 do
   source $file
 done
