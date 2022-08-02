@@ -1,1 +1,1 @@
-export PATH="$HOME/.jenv/bin:$PATH"
+. ~/.asdf/plugins/java/set-java-home.zsh

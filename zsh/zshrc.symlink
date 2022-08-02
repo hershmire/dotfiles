@@ -24,7 +24,7 @@ done
 
 # NOTE: Looping through the path files has been moved below loading everything
 # (above) in order to get custom PATH settings to take precedence over
-# /usr/local/bin 
+# /usr/local/bin
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
