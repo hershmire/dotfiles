@@ -1,0 +1,251 @@
+Script started on Tue Aug  2 16:07:16 2022
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hscript bootstrapbootstrap [10D/bootstrap[9D.script/bootstrap[16D./script/bootstrap[16D[?2004l
+
+  [ [00;34m..[0m ] installing dotfiles
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/vim/vimrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/asdf/asdfrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/zsh/zshrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/ruby/gemrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/ruby/irbrc.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/git/gitconfig.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/git/gitconfig.local.symlink
+[2K  [ [00;32mOK[0m ] skipped /Users/eddie/.dotfiles/git/gitignore.symlink
+  [ [00;34m..[0m ] installing dependencies
+  [ [00;34m..[0m ] › brew update
+Updated 1 tap (homebrew/core).
+[34m==>[0m [1mOutdated Formulae[0m
+nspr                                 nss                                  oniguruma                            sqlite                               unbound                              xz
+
+You have [1m6[0m outdated formulae installed.
+You can upgrade them with [1mbrew upgrade[0m
+or list them with [1mbrew outdated[0m.
+  [ [00;34m..[0m ] › /Users/eddie/.dotfiles/script/install
+  [ [00;34m..[0m ] › brew bundle
+  [ [00;34m..[0m ] Using homebrew/bundle
+  [ [00;34m..[0m ] Using puma/puma
+  [ [00;34m..[0m ] Using ack
+  [ [00;34m..[0m ] Installing asdf
+  [ [00;34m..[0m ] Using gpg
+  [ [00;34m..[0m ] Using gawk
+  [ [00;34m..[0m ] Using caddy
+  [ [00;34m..[0m ] Using coreutils
+  [ [00;34m..[0m ] Using direnv
+  [ [00;34m..[0m ] Using gh
+  [ [00;34m..[0m ] Using git
+  [ [00;34m..[0m ] Using jq
+  [ [00;34m..[0m ] Using ruby-build
+  [ [00;34m..[0m ] Using rbenv
+  [ [00;34m..[0m ] Using wget
+  [ [00;34m..[0m ] Using youtube-dl
+  [ [00;34m..[0m ] Using dbvisualizer
+  [ [00;34m..[0m ] Using docker
+  [ [00;34m..[0m ] Using google-cloud-sdk
+  [ [00;34m..[0m ] Using keka
+  [ [00;34m..[0m ] Using licecap
+  [ [00;34m..[0m ] Using postman
+  [ [00;34m..[0m ] Using protonvpn
+  [ [00;34m..[0m ] Using spectacle
+  [ [00;34m..[0m ] Using visual-studio-code
+  [ [00;34m..[0m ] Homebrew Bundle complete! 25 Brewfile dependencies now installed.
+  [ [00;34m..[0m ] › Running installers
+  [ [00;34m..[0m ] Skip installing nodejs until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again.
+  [ [00;34m..[0m ] › sudo softwareupdate -i -a
+Password:
+No updates are available.
+  [ [00;34m..[0m ] Software Update Tool
+  [ [00;34m..[0m ] 
+  [ [00;34m..[0m ] Finding available software
+  [ [00;34m..[0m ] Skip installing java until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again.
+  [ [00;34m..[0m ] Skip installing yarn until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again.
+[2K  [ [00;32mOK[0m ] dependencies installed
+
+  All installed!
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hrreload![?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hddot[?2004l
+› brew update
+Already up-to-date.
+› /Users/eddie/.dotfiles/script/install
+› brew bundle
+Using homebrew/bundle
+Using puma/puma
+Using ack
+Using asdf
+Using gpg
+Using gawk
+Using caddy
+Using coreutils
+Using direnv
+Using gh
+Using git
+Using jq
+Using ruby-build
+Using rbenv
+Using wget
+Using youtube-dl
+Using dbvisualizer
+Using docker
+Using google-cloud-sdk
+Using keka
+Using licecap
+Using postman
+Using protonvpn
+Using spectacle
+Using visual-studio-code
+[32mHomebrew Bundle complete! 25 Brewfile dependencies now installed.[0m
+› Running installers
+Skip installing nodejs until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again.
+› sudo softwareupdate -i -a
+Software Update Tool
+
+Finding available software
+No updates are available.
+Skip installing java until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again.
+Skip installing yarn until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again.
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hdot[?2004l
+› brew update
+^C/opt/homebrew/Library/Homebrew/cmd/update.sh: line 322: 34769 Terminated: 15          ( UPSTREAM_REPOSITORY_URL="$(git config remote.origin.url)"; if [[ "${UPSTREAM_REPOSITORY_URL}" == "https://github.com/"* ]]; then
+    UPSTREAM_REPOSITORY="${UPSTREAM_REPOSITORY_URL#https://github.com/}"; UPSTREAM_REPOSITORY="${UPSTREAM_REPOSITORY%.git}"; if [[ "${DIR}" == "${HOMEBREW_REPOSITORY}" && -n "${HOMEBREW_UPDATE_TO_TAG}" ]]; then
+        GITHUB_API_ETAG="$(sed -n 's/^ETag: "\([a-f0-9]\{32\}\)".*/\1/p' ".git/GITHUB_HEADERS" 2>/dev/null)"; GITHUB_API_ACCEPT="application/vnd.github+json"; GITHUB_API_ENDPOINT="tags";
+    else
+        GITHUB_API_ETAG="$(git rev-parse "refs/remotes/origin/${UPSTREAM_BRANCH_DIR}")"; GITHUB_API_ACCEPT="application/vnd.github.sha"; GITHUB_API_ENDPOINT="commits/${UPSTREAM_BRANCH_DIR}";
+    fi; UPSTREAM_SHA_HTTP_CODE="$(
+          curl             "${CURL_DISABLE_CURLRC_ARGS[@]}"             --silent --max-time 3             --location --no-remote-time --output /dev/null --write-out "%{http_code}"             --dump-header "${DIR}/.git/GITHUB_HEADERS"             --user-agent "${HOMEBREW_USER_AGENT_CURL}"             --header "Accept: ${GITHUB_API_ACCEPT}"             --header "If-None-Match: \"${GITHUB_API_ETAG}\""             "https://api.github.com/repos/${UPSTREAM_REPOSITORY}/${GITHUB_API_ENDPOINT}"
+        )"; [[ -f "${DIR}/.git/FETCH_HEAD" ]] && touch "${DIR}/.git/FETCH_HEAD"; [[ -z "${HOMEBREW_UPDATE_FORCE}" ]] && [[ "${UPSTREAM_SHA_HTTP_CODE}" == "304" ]] && exit;
+else
+    if [[ -n "${HOMEBREW_UPDATE_AUTO}" ]]; then
+        FORCE_AUTO_UPDATE="$(git config homebrew.forceautoupdate 2>/dev/null || echo "false")"; if [[ "${FORCE_AUTO_UPDATE}" != "true" ]]; then
+            exit;
+        fi;
+    fi;
+fi; if [[ -n "${HOMEBREW_VERBOSE}" ]]; then
+    echo "Fetching ${DIR}...";
+fi; local tmp_failure_file="${DIR}/.git/TMP_FETCH_FAILURES"; rm -f "${tmp_failure_file}"; if [[ -n "${HOMEBREW_UPDATE_AUTO}" ]]; then
+    git fetch --tags --force "${QUIET_ARGS[@]}" origin "refs/heads/${UPSTREAM_BRANCH_DIR}:refs/remotes/origin/${UPSTREAM_BRANCH_DIR}" 2> /dev/null;
+else
+    if ! git fetch --tags --force "${QUIET_ARGS[@]}" origin "refs/heads/${UPSTREAM_BRANCH_DIR}:refs/remotes/origin/${UPSTREAM_BRANCH_DIR}" 2>> "${tmp_failure_file}"; then
+        [[ -f "${tmp_failure_file}" ]] && cat "${tmp_failure_file}" 1>&2; if [[ "${UPSTREAM_SHA_HTTP_CODE}" == "404" ]]; then
+            TAP="${DIR#"${HOMEBREW_LIBRARY}"/Taps/}"; echo "${TAP} does not exist! Run \`brewdot[?2004l
+› brew update
+^C/opt/homebrew/Library/Homebrew/cmd/update.sh: line 322: 34769 Terminated: 15          ( UPSTREAM_REPOSITORY_URL="$(git config remote.origin.url)"; if [[ "${UPSTREAM_REPOSITORY_URL}" == "https://github.com/"* ]]; then
+    UPSTREAM_REPOSITORY="${UPSTREAM_REPOSITORY_URL#https://github.com/}"; UPSTREAM_REPOSITORY="${UPSTREAM_REPOSITORY%.git}"; if [[ "${DIR}" == "${HOMEBREW_REPOSITORY}" && -n "${HOMEBREW_UPDATE_TO_TAG}" ]]; then
+        GITHUB_API_ETAG="$(sed -n 's/^ETag: "\([a-f0-9]\{32\}\)".*/\1/p' ".git/GITHUB_HEADERS" 2>/dev/null)"; GITHUB_API_ACCEPT="application/vnd.github+json"; GITHUB_API_ENDPOINT="tags";
+    else
+        GITHUB_API_ETAG="$(git rev-parse "refs/remotes/origin/${UPSTREAM_BRANCH_DIR}")"; GITHUB_API_ACCEPT="application/vnd.github.sha"; GITHUB_API_ENDPOINT="commits/${UPSTREAM_BRANCH_DIR}";
+    fi; UPSTREAM_SHA_HTTP_CODE="$(
+          curl             "${CURL_DISABLE_CURLRC_ARGS[@]}"             --silent --max-time 3             --location --no-remote-time --output /dev/null --write-out "%{http_code}"             --dump-header "${DIR}/.git/GITHUB_HEADERS"             --user-agent "${HOMEBREW_USER_AGENT_CURL}"             --header "Accept: ${GITHUB_API_ACCEPT}"             --header "If-None-Match: \"${GITHUB_API_ETAG}\""             "https://api.github.com/repos/${UPSTREAM_REPOSITORY}/${GITHUB_API_ENDPOINT}"
+        )"; [[ -f "${DIR}/.git/FETCH_HEAD" ]] && touch "${DIR}/.git/FETCH_HEAD"; [[ -z "${HOMEBREW_UPDATE_FORCE}" ]] && [[ "${UPSTREAM_SHA_HTTP_CODE}" == "304"                                                                 ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hrreload![?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004haasdf list[?2004l
+java
+  No versions installed
+nodejs
+  No versions installed
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004haada asdf uninstall nodejs[?2004l
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hasdf uninstall nodejs[16Dlist            [12D[?2004l
+java
+  No versions installed
+nodejs
+  No versions installed
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hr rrm ~/.tool-versions[?2004l
+rm: /Users/eddie/.tool-versions: No such file or directory
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004heexit[?2004l
+
+Script done on Tue Aug  2 16:10:41 2022
+js lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hasdf uninstall nodejs[16Dlist            [12D[?2004l
+java
+  No versions installed
+nodejs
+  No versions installed
+[1m[7m%[27m[1m[0m                                                          Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004haada asdf uninstall nodejs[?2004l
+[1m[7nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hr rrm ~/.tool-versions[?2004l
+rm: /Users/eddie/.tool-versions: No such file or directory
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QRNo version is set for command node
+Consider adding one of the following versions in your config file at 
+nodejs 16.16.0
+nodejs lts
+[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004heexit[?2004l
+
+Script done, output file is bootstrap
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hbbrew uninstall asdf[?2004l
+Uninstalling /opt/homebrew/Cellar/asdf/0.10.2... (168 files, 717.0KB)
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004heexit[?2004l
+
+Script done on Tue Aug  2 16:11:03 2022
+[?2004l
+
+Script done, output file is bootstrap
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004hbbrew uninstall asdf[?2004l
+Uninstalling /opt/homebrew/Cellar/asdf/0.10.2... (168 files, 717.0KB)
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004heexit[?2004l
+
+Script done, output file is bootstrap
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                               ]2;mbp-L4W966D3QR[0m[27m[24m[J
+[1;92m🔌  ⌛️  [0min [01;36m.dotfiles/[00m on [01;31mswitch-to-asdf[00m 
+› [K[220C[01;36m[00m[220D[?2004heexit[?2004l
+
+Script done on Tue Aug  2 16:11:09 2022

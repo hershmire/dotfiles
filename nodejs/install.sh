@@ -1,14 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-if [ ! -z "${ASDF_DIR}" ]
-then
-  asdf plugin add nodejs
-  asdf install nodejs lts
-  asdf global nodejs lts
-  echo "Note: Additional nodejs versions should be managed separately: 'asdf install nodejs <version>'"
-else
-  echo "Skip installing nodejs until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again."
-fi
+asdf plugin add nodejs
+asdf nodejs update-nodebuild
+asdf install nodejs lts
+asdf global nodejs lts
+echo "Note: Additional nodejs versions should be managed separately: 'asdf install nodejs <version>'"
 
 # https://www.npmjs.com/package/spoof
 # if test ! $(which spoof)
