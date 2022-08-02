@@ -22,7 +22,7 @@ brew 'wget'
 # brew 'yarn'
 brew 'youtube-dl'
 
-cask 'caffeine'
+# cask 'caffeine'
 cask 'dbvisualizer'
 cask 'docker'
 cask 'google-cloud-sdk'

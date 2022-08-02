@@ -6,5 +6,5 @@ then
   asdf install yarn latest
   echo "Note: Additional yarn versions should be managed separately: 'asdf install yarn <version>'"
 else
-  echo "Skip installing yarn until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window and try again."
+  echo "Skip installing yarn until 'ASDF_DIR' is available. Run 'reload!' or open a new terminal window after the remaining installs complete and try again."
 fi
