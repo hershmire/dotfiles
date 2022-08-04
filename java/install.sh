@@ -1,9 +1,9 @@
-# #!/bin/sh
-# echo " About to install java"
+#!/bin/sh
 
-# if test ! $(which jenv)
-# then
-#   # Managing Java Environments: http://www.jenv.be/
-#   echo "  Installing jenv for you."
-#   brew install jenv
-# fi
+if [ ! -z "${ASDF_DIR}" ]
+then
+  asdf plugin add java
+  echo "Manage java versions with asdf: 'asdf install java <version>'"
+else
+  echo "Java versions are managed by 'asdf' and is missing 'ASDF_DIR' env var. No default version are set with this install script."
+fi
