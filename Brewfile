@@ -20,7 +20,6 @@ brew 'ruby-build'
 brew 'rbenv'
 brew 'terraform'
 brew 'wget'
-brew 'youtube-dl'
 
 cask 'dbvisualizer'
 cask 'docker'
