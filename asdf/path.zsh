@@ -1,2 +1,2 @@
 # https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
-. "$(brew --prefix asdf)/libexec/asdf.sh"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
