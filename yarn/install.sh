@@ -1,6 +1,12 @@
 #!/bin/sh
 
-asdf plugin add yarn &&
+if ! [[ -n "$(asdf plugin list | grep yarn)" ]]; then
+  echo "Installing yarn plugin..."
+  asdf plugin add yarn
+else
+  echo "Updating yarn plugin..."
+  asdf plugin update yarn
+fi
+
 asdf install yarn latest &&
-asdf set yarn latest
-echo "Note: Additional yarn versions should be managed separately: 'asdf install yarn <version>'"
+asdf set -u yarn latest

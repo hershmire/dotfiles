@@ -5,12 +5,11 @@ tap 'puma/puma'
 
 brew 'ack'
 brew 'asdf'
-brew 'gpg'
-brew 'gawk'
+brew 'gpg' # For nodejs plugin
+brew 'gawk' # For nodejs plugin
 
 brew 'caddy'
 brew 'coreutils'
-brew 'direnv'
 brew 'gh'
 brew 'git'
 brew 'jq'
