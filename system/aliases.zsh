@@ -13,4 +13,5 @@ fi
 
 if (( $+commands[bat] )); then
   alias cat="bat"
+  export BAT_THEME="ansi"
 fi

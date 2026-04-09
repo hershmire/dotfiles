@@ -6,6 +6,10 @@
 .env*.local
 *.pem
 *.key
+*.log
 node_modules/
 .idea/
 .vscode/
+.direnv/
+.terraform/
+.terraform.lock.hcl

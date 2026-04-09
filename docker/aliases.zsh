@@ -1,2 +1,5 @@
-alias d='docker $*'
-alias d-c='docker-compose $*'
+alias d='docker'
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcl='docker compose logs -f'
