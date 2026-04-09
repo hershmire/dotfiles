@@ -1,8 +1,8 @@
 # Dotfiles
 
-This repo is a fork of [holman's dotfiles](ttps://github.com/holman/dotfiles) with some modifications specific to my own needs.
+This repo is a fork of [holman's dotfiles](https://github.com/holman/dotfiles) with some modifications specific to my own needs.
 
-Before starting, make sure you're terminal is running in ZSH:
+Before starting, make sure your terminal is running in ZSH:
 
 ```sh
 chsh -s /bin/zsh
@@ -29,6 +29,30 @@ defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
+## What's Included
+
+### Shell
+- [Starship](https://starship.rs) prompt with git status, Node.js version, battery, and directory info
+- [fzf](https://github.com/junegunn/fzf) for fuzzy finding
+- [zoxide](https://github.com/ajeetdsouza/zoxide) for smarter directory navigation
+
+### Modern CLI Replacements
+- [eza](https://github.com/eza-community/eza) replaces `ls`
+- [bat](https://github.com/sharkdp/bat) replaces `cat`
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for fast text search
+- [fd](https://github.com/sharkdp/fd) for fast file finding
+
+### Version Management
+- [asdf](https://asdf-vm.com) manages Node.js, Ruby, Java, and Yarn versions
+
+### Editors
+- Windsurf and Antigravity PATH support in `editors/`
+
+### Other Tools
+- Git utilities and aliases in `git/` and `bin/`
+- Homebrew dependencies managed via `Brewfile` (run `brew bundle` to install)
+- macOS system defaults in `macos/`
+
 ## Topical
 
 Everything's built around topic areas. If you're adding a new area to your
@@ -37,20 +61,13 @@ files in there. Anything with an extension of `.zsh` will get automatically
 included into your shell. Anything with an extension of `.symlink` will get
 symlinked without extension into `$HOME` when you run `script/bootstrap`.
 
-## What's Inside
-
-A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
-above and see what components may mesh up with you.
-[Fork it](https://github.com/hershmire/dotfiles/fork), remove what you don't
-use, and build on what you do use.
-
 ## Components
 
 There's a few special files in the hierarchy.
 
 - **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
   available everywhere.
-- **Brewfile**: This is a list of applications for [Homebrew Cask](https://caskroom.github.io) to install: things like Caddy, Ack, ASDF, etc. Might want to edit this file before running any initial setup.
+- **Brewfile**: This is a list of applications for Homebrew to install: things like Caddy, asdf, Git, etc. Might want to edit this file before running any initial setup.
 - **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
   environment.
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
@@ -66,9 +83,8 @@ There's a few special files in the hierarchy.
 ## Bugs
 
 I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as _my_ dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
+work for you. That said, I do use this as _my_ dotfiles, so there's a good
+chance I may break something if I forget to make a check for a dependency.
 
 If you're brand-new to the project and run into any blockers, please
 [open an issue](https://github.com/hershmire/dotfiles/issues) on this repository
