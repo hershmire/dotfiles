@@ -53,7 +53,7 @@ You should see Powerline arrows and various icons. If you see boxes or question 
 [Starship](https://starship.rs) is a cross-shell prompt that shows contextual info about your environment. Here's what a typical prompt looks like:
 
 ```
-.dotfiles on  edits [!] on ☁️  eddie.leffler@side.com
+.dotfiles on  edits [!] on ☁️  frank@example.com
 ❯
 ```
 
