@@ -23,12 +23,3 @@ fi
 
 asdf set -u nodejs $latestAvailableLTS
 echo "Global nodejs set to $latestAvailableLTS. Any additional versions should be managed via 'asdf install nodejs <version>'."
-
-# https://www.npmjs.com/package/spoof
-if test ! $(which spoof)
-then
-  if test $(which npm)
-  then
-    npm install spoof -g
-  fi
-fi

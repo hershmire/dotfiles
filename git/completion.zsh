@@ -7,3 +7,8 @@ if test -f $completion
 then
   source $completion
 fi
+
+# GitHub CLI completion
+if (( $+commands[gh] )); then
+  eval "$(gh completion -s zsh)"
+fi

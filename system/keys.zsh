@@ -1,2 +1,6 @@
 # Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+if [[ -f ~/.ssh/id_ed25519.pub ]]; then
+  alias pubkey="pbcopy < ~/.ssh/id_ed25519.pub && echo '=> Public key copied to pasteboard.'"
+elif [[ -f ~/.ssh/id_rsa.pub ]]; then
+  alias pubkey="pbcopy < ~/.ssh/id_rsa.pub && echo '=> Public key copied to pasteboard.'"
+fi
