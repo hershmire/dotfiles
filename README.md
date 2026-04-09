@@ -36,6 +36,46 @@ this script in `bin/`.
 - [fzf](https://github.com/junegunn/fzf) for fuzzy finding
 - [zoxide](https://github.com/ajeetdsouza/zoxide) for smarter directory navigation
 
+### Font
+
+These dotfiles install [JetBrains Mono Nerd Font](https://www.nerdfonts.com/) via Homebrew and configure iTerm2 to use it. Nerd Fonts patch in thousands of icons (Powerline symbols, devicons, etc.) that tools like Starship and eza use to display glyphs in your prompt and file listings.
+
+To verify the font is working, run:
+
+```sh
+echo "\ue0b0 \ue0b2 \uf113 \uf015 \uf09b \uf07c"
+```
+
+You should see Powerline arrows and various icons. If you see boxes or question marks, make sure the font is selected in your terminal (iTerm2: Settings → Profiles → Text).
+
+### Starship Prompt
+
+[Starship](https://starship.rs) is a cross-shell prompt that shows contextual info about your environment. Here's what a typical prompt looks like:
+
+```
+.dotfiles on  edits [!] on ☁️  eddie.leffler@side.com
+❯
+```
+
+| Segment | Module | Meaning |
+|---|---|---|
+| `.dotfiles` | `directory` | Current directory |
+| ` edits [!]` | `git_branch` + `git_status` | Git branch; `[!]` = modified files |
+| `☁️ eddie.leffler@side.com` | `gcloud` | Active Google Cloud account |
+
+Starship enables modules automatically when it detects relevant tools (gcloud, node, python, etc.). To see what your prompt is currently showing and why, run:
+
+```sh
+starship explain
+```
+
+The config lives at `starship/starship.toml.symlink`. To disable a module (e.g. gcloud), add:
+
+```toml
+[gcloud]
+disabled = true
+```
+
 ### Modern CLI Replacements
 - [eza](https://github.com/eza-community/eza) replaces `ls`
 - [bat](https://github.com/sharkdp/bat) replaces `cat`

@@ -39,3 +39,6 @@ defaults write com.apple.Safari.plist IncludeDevelopMenu -bool true
 defaults write com.apple.Safari.plist WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari.plist "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Set iTerm2 font to JetBrains Mono Nerd Font.
+/usr/libexec/PlistBuddy -c "Set ':New Bookmarks:0:Normal Font' 'JetBrainsMonoNF-Regular 15'" ~/Library/Preferences/com.googlecode.iterm2.plist 2>/dev/null
