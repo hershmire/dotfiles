@@ -1,3 +1,11 @@
 .DS_Store
 *~
 *.swp
+.env
+.env.local
+.env*.local
+*.pem
+*.key
+node_modules/
+.idea/
+.vscode/

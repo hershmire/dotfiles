@@ -1,6 +1,12 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+# Homebrew must be in PATH before sourcing topic files,
+# since many config.zsh files check for brew-installed commands
+if [[ -d /opt/homebrew/bin ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 

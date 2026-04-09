@@ -1,8 +1,8 @@
 # Dotfiles
 
-This repo is a fork of [holman's dotfiles](ttps://github.com/holman/dotfiles) with some modifications specific to my own needs.
+This repo is a fork of [holman's dotfiles](https://github.com/holman/dotfiles) with some modifications specific to my own needs.
 
-Before starting, make sure you're terminal is running in ZSH:
+Before starting, make sure your terminal is running in ZSH:
 
 ```sh
 chsh -s /bin/zsh
@@ -29,6 +29,70 @@ defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
+## What's Included
+
+### Shell
+- [Starship](https://starship.rs) prompt with git status, Node.js version, battery, and directory info
+- [fzf](https://github.com/junegunn/fzf) for fuzzy finding
+- [zoxide](https://github.com/ajeetdsouza/zoxide) for smarter directory navigation
+
+### Font
+
+These dotfiles install [JetBrains Mono Nerd Font](https://www.nerdfonts.com/) via Homebrew and configure iTerm2 to use it. Nerd Fonts patch in thousands of icons (Powerline symbols, devicons, etc.) that tools like Starship and eza use to display glyphs in your prompt and file listings.
+
+To verify the font is working, run:
+
+```sh
+echo "\ue0b0 \ue0b2 \uf113 \uf015 \uf09b \uf07c"
+```
+
+You should see Powerline arrows and various icons. If you see boxes or question marks, make sure the font is selected in your terminal (iTerm2: Settings → Profiles → Text).
+
+### Starship Prompt
+
+[Starship](https://starship.rs) is a cross-shell prompt that shows contextual info about your environment. Here's what a typical prompt looks like:
+
+```
+.dotfiles on  edits [!] on ☁️  eddie.leffler@side.com
+❯
+```
+
+| Segment | Module | Meaning |
+|---|---|---|
+| `.dotfiles` | `directory` | Current directory |
+| ` edits [!]` | `git_branch` + `git_status` | Git branch; `[!]` = modified files |
+| `☁️ eddie.leffler@side.com` | `gcloud` | Active Google Cloud account |
+
+Starship enables modules automatically when it detects relevant tools (gcloud, node, python, etc.). To see what your prompt is currently showing and why, run:
+
+```sh
+starship explain
+```
+
+The config lives at `starship/starship.toml.symlink` (symlinked to `~/.starship.toml`). Starship doesn't support config includes, so personal customizations go directly in this file. Since it's tracked by git, use `git update-index --skip-worktree starship/starship.toml.symlink` to keep local changes from showing up in diffs. For example, to disable the gcloud module, add:
+
+```toml
+[gcloud]
+disabled = true
+```
+
+### Modern CLI Replacements
+- [eza](https://github.com/eza-community/eza) replaces `ls`
+- [bat](https://github.com/sharkdp/bat) replaces `cat`
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for fast text search
+- [fd](https://github.com/sharkdp/fd) for fast file finding
+
+### Version Management
+- [asdf](https://asdf-vm.com) manages Node.js, Ruby, Java, and Yarn versions
+
+### Editors
+- Windsurf and Antigravity PATH support in `editors/`
+
+### Other Tools
+- Git utilities and aliases in `git/` and `bin/`
+- Homebrew dependencies managed via `Brewfile` (run `brew bundle` to install)
+- macOS system defaults in `macos/`
+
 ## Topical
 
 Everything's built around topic areas. If you're adding a new area to your
@@ -37,20 +101,13 @@ files in there. Anything with an extension of `.zsh` will get automatically
 included into your shell. Anything with an extension of `.symlink` will get
 symlinked without extension into `$HOME` when you run `script/bootstrap`.
 
-## What's Inside
-
-A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
-above and see what components may mesh up with you.
-[Fork it](https://github.com/hershmire/dotfiles/fork), remove what you don't
-use, and build on what you do use.
-
 ## Components
 
 There's a few special files in the hierarchy.
 
 - **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
   available everywhere.
-- **Brewfile**: This is a list of applications for [Homebrew Cask](https://caskroom.github.io) to install: things like Caddy, Ack, ASDF, etc. Might want to edit this file before running any initial setup.
+- **Brewfile**: This is a list of applications for Homebrew to install: things like Caddy, asdf, Git, etc. Might want to edit this file before running any initial setup.
 - **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
   environment.
 - **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
@@ -66,9 +123,8 @@ There's a few special files in the hierarchy.
 ## Bugs
 
 I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as _my_ dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
+work for you. That said, I do use this as _my_ dotfiles, so there's a good
+chance I may break something if I forget to make a check for a dependency.
 
 If you're brand-new to the project and run into any blockers, please
 [open an issue](https://github.com/hershmire/dotfiles/issues) on this repository
