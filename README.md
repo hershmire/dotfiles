@@ -69,7 +69,7 @@ Starship enables modules automatically when it detects relevant tools (gcloud, n
 starship explain
 ```
 
-The config lives at `starship/starship.toml.symlink`. To disable a module (e.g. gcloud), add:
+The config lives at `starship/starship.toml.symlink` (symlinked to `~/.starship.toml`). Starship doesn't support config includes, so personal customizations go directly in this file. Since it's tracked by git, use `git update-index --skip-worktree starship/starship.toml.symlink` to keep local changes from showing up in diffs. For example, to disable the gcloud module, add:
 
 ```toml
 [gcloud]
