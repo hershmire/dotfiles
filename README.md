@@ -24,10 +24,24 @@ Everything is configured and tweaked within `~/.dotfiles`.
 The main file you may want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine. However, if you are just looking to add paths or other setup to things outside these dotfiles, create a `.localrc` file in your home directory and this will automatically pick it up.
 
-`dot` is a simple script that installs some dependencies, sets sane macOS
-defaults, and so on. Tweak this script, and occasionally run `dot` from
-time to time to keep your environment fresh and up-to-date. You can find
-this script in `bin/`.
+## Refresh
+
+### Quick refresh
+
+`dot` is a simple script that installs some dependencies, sets sane macOS defaults, and so on. Run `dot` from time to time to keep your environment fresh and up-to-date. You can find this script in `bin/`.
+
+### Full refresh
+
+To pull the latest changes from the repo and fully refresh your environment:
+
+```sh
+cd ~/.dotfiles
+git pull
+dot
+reload!
+```
+
+For a completely clean slate, restart your terminal after running these commands.
 
 ## What's Included
 
