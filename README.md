@@ -61,7 +61,7 @@ You should see Powerline arrows and various icons. If you see boxes or question 
 |---|---|---|
 | `.dotfiles` | `directory` | Current directory |
 | ` edits [!]` | `git_branch` + `git_status` | Git branch; `[!]` = modified files |
-| `☁️ eddie.leffler@side.com` | `gcloud` | Active Google Cloud account |
+| `☁️ frank@example.com` | `gcloud` | Active Google Cloud account |
 
 Starship enables modules automatically when it detects relevant tools (gcloud, node, python, etc.). To see what your prompt is currently showing and why, run:
 
