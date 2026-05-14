@@ -27,7 +27,7 @@ while test $# -gt 0; do
 			displayUsageAndExit
 			;;
 		"-e"|"--edit")
-			exec "$EDITOR" "$dotfilesDirectory"
+			exec $EDITOR "$dotfilesDirectory"
 			exit
 			;;
 		*)
