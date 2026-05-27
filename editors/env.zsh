@@ -1,5 +1,5 @@
-if [[ -x "$HOME/.antigravity/antigravity/bin/antigravity" ]]; then
-  export EDITOR='antigravity'
+if [[ -x "$HOME/.antigravity-ide/antigravity-ide/bin/antigravity-ide" ]]; then
+  export EDITOR='antigravity-ide'
 elif (( $+commands[code] )); then
   export EDITOR='code --wait'
 else
