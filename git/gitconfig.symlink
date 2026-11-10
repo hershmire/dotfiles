@@ -34,3 +34,6 @@
 
 [init]
 	defaultBranch = main
+[fetch]
+	# Drop remote-tracking branches GitHub deleted, so `git gone` can find them.
+	prune = true

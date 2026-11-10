@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Run `git gone --fetch` in every repository under GIT_GONE_ROOTS
+# (colon-separated, default ~/Code), up to three levels deep. The daily
+# launchd job in git/install.sh calls this.
+#
+#   git-gone-all [--dry-run]
+
+set -uo pipefail
+
+here=$(cd "$(dirname "$0")" && pwd)
+roots=${GIT_GONE_ROOTS:-$HOME/Code}
+
+echo "== git-gone-all $(date '+%Y-%m-%d %H:%M:%S')"
+
+IFS=: read -r -a root_list <<< "$roots"
+for root in "${root_list[@]}"; do
+  [ -d "$root" ] || continue
+  # A main checkout has a .git directory; worktrees have a .git file and are
+  # handled through their main checkout.
+  find "$root" -mindepth 2 -maxdepth 4 -type d -name .git -not -path '*/node_modules/*' \
+    -not -path '*/.claude/worktrees/*' 2>/dev/null |
+  while IFS= read -r gitdir; do
+    (cd "$(dirname "$gitdir")" && "$here/git-gone" --fetch "$@")
+  done
+done
