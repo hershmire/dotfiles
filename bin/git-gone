@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+#
+# Delete local branches whose upstream was deleted on the remote (shown as
+# "[gone]" after `git fetch --prune`), removing any worktree that has the
+# branch checked out first.
+#
+#   git gone [--dry-run] [--fetch]
+#
+# Safety:
+#   - A worktree with uncommitted or untracked changes is skipped, as is its
+#     branch.
+#   - A worktree touched in the last GIT_GONE_MIN_IDLE_HOURS (default 12) is
+#     skipped, so an open editor or Claude session isn't pulled out from under
+#     you.
+#   - The main checkout is never removed; a gone branch checked out there is
+#     reported, not deleted.
+#   - Branches are deleted with -D (squash merges look unmerged to git). Each
+#     deletion prints the old SHA; restore with `git branch <name> <sha>`.
+
+set -uo pipefail
+
+dry_run=0
+fetch=0
+for arg in "$@"; do
+  case "$arg" in
+    -n|--dry-run) dry_run=1 ;;
+    -f|--fetch) fetch=1 ;;
+    -h|--help) sed -n '3,19p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    *) echo "git-gone: unknown option $arg" >&2; exit 2 ;;
+  esac
+done
+
+min_idle_hours=${GIT_GONE_MIN_IDLE_HOURS:-12}
+
+common_dir=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null) || {
+  echo "git-gone: not a git repository" >&2; exit 1; }
+main_wt=$(dirname "$common_dir")
+repo=$(basename "$main_wt")
+cd "$main_wt" || exit 1
+
+if [ "$fetch" = 1 ]; then
+  git fetch --all --prune --quiet || echo "$repo: fetch failed, using existing refs" >&2
+fi
+
+# Forget worktrees whose folders were already deleted.
+[ "$dry_run" = 1 ] || git worktree prune
+
+# "<branch>\t<worktree path>" for every branch checked out somewhere. Plain
+# text instead of an associative array so macOS's bash 3.2 can run this.
+worktrees=$(git worktree list --porcelain | awk '
+  /^worktree / { wt = substr($0, 10) }
+  /^branch refs\/heads\// { print substr($0, 19) "\t" wt }')
+
+worktree_for() {
+  printf '%s\n' "$worktrees" | awk -F'\t' -v b="$1" '$1 == b { print $2; exit }'
+}
+
+idle_enough() {
+  # True when nothing in the worktree's git dir or top level changed recently.
+  local wt=$1 gitdir newest now
+  gitdir=$(git -C "$wt" rev-parse --absolute-git-dir 2>/dev/null) || return 0
+  newest=$(stat -f %m "$gitdir/HEAD" "$gitdir/index" "$wt" 2>/dev/null | sort -n | tail -1)
+  now=$(date +%s)
+  [ -z "$newest" ] || [ $(( (now - newest) / 3600 )) -ge "$min_idle_hours" ]
+}
+
+status=0
+while IFS= read -r branch; do
+  [ -n "$branch" ] || continue
+  wt=$(worktree_for "$branch")
+
+  if [ -n "$wt" ]; then
+    if [ "$wt" = "$main_wt" ]; then
+      echo "$repo: skip $branch (checked out in the main checkout)"
+      continue
+    fi
+    if [ -n "$(git -C "$wt" status --porcelain 2>/dev/null)" ]; then
+      echo "$repo: skip $branch (worktree $wt has changes)"
+      continue
+    fi
+    if ! idle_enough "$wt"; then
+      echo "$repo: skip $branch (worktree $wt used in the last ${min_idle_hours}h)"
+      continue
+    fi
+    if [ "$dry_run" = 1 ]; then
+      echo "$repo: would remove worktree $wt"
+    elif ! git worktree remove "$wt"; then
+      echo "$repo: skip $branch (could not remove worktree $wt)"
+      status=1
+      continue
+    else
+      echo "$repo: removed worktree $wt"
+    fi
+  fi
+
+  sha=$(git rev-parse --short "refs/heads/$branch")
+  if [ "$dry_run" = 1 ]; then
+    echo "$repo: would delete $branch ($sha)"
+  elif git branch -D --quiet "$branch"; then
+    echo "$repo: deleted $branch ($sha)"
+  else
+    status=1
+  fi
+done < <(git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads |
+           awk '$2 == "[gone]" { print $1 }')
+
+exit $status
